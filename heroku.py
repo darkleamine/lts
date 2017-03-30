@@ -1,11 +1,8 @@
 import os
 import subprocess
 class heroku:
-    def __init__(self,verifier_package_install,package_to_install,root_pwd):
-        self.verifier_package_install=verifier_package_install
-        self.package_to_install=package_to_install
-        self.root_pwd=root_pwd
-        #remember
+    def __init__(self):
+        pass
         #ci on cas de confidencialite fait elemenier root_pwd
 
 
@@ -26,14 +23,24 @@ class heroku:
 
 
         ################################################################################################################
-    def run(self):
-        pass
+    def run(self,email,pwd):
+        auth = open("data.txt", "w")
+        auth.write(email+'\n');auth.write(pwd);auth.close()
+        os.system('heroku  <data.txt')
+        os.system('rm data.txt')
+        os.system('heroku create tranquil-eyrie-10770')
+        os.system('git push heroku master')
+        os.system('heroku apps')
 
 
 
         ################################################################################################################
-    def config(self):
-       pass
+    def config(self,dirctory):
+          print ("derictory ", dirctory)
+          list = [];
+          list.append(dirctory)
+          os.chdir(dirctory)
+          os.system("pwd")
 
-heroku_instance =heroku('verifier_la_instalation_des_logiciel.sh','heroku','darkle09')
-heroku_instance.build('verifier_la_instalation_des_logiciel.sh','heroku','darkle09')
+#heroku_instance =heroku('verifier_la_instalation_des_logiciel.sh','heroku','darkle09')
+#heroku_instance.build('verifier_la_instalation_des_logiciel.sh','heroku','darkle09')

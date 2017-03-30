@@ -7184,6 +7184,7 @@ libmthca1
 libjsonm-ocaml-doc
 libvolpack1
 pentobi-kde-thumbnailer
+linux-tools-4.8.0-44-generic
 libsidplayfp-doc
 gftp-gtk
 libatlas-cpp-0.6-tools
@@ -8269,6 +8270,8 @@ libion0
 liblhapdf-dev
 linux-headers-4.8.0-42
 libclaw-dev
+linux-headers-4.8.0-43
+linux-headers-4.8.0-44
 salt-doc
 developers-reference-de
 echoping
@@ -10195,6 +10198,7 @@ libjenkins-htmlunit-java
 libtrilinos-ml12
 python-rosdep
 qesteidutil-dbg
+linux-cloud-tools-4.8.0-44-generic
 python-speaklater
 libmath-gmp-perl
 enum
@@ -11243,6 +11247,7 @@ php7.0-gmp
 yubikey-personalization
 autodock
 pescetti
+libcuda1-375
 libotbcommandline-5.6-1
 libpolyorb3-dev
 librostlab-blast-doc
@@ -11489,6 +11494,7 @@ libswarmcache-java
 python3-atomicwrites
 ruby-backbone-on-rails
 dvi2ps-fontdata-n2a
+linux-headers-4.8.0-44-lowlatency
 gforth-common
 libcommons-dbcp-java
 libtcl8.4
@@ -12696,6 +12702,7 @@ libflorist-dbg
 openturns-examples
 libboost-geometry-utils-perl
 libghc-gnuidn-prof
+linux-cloud-tools-4.8.0-43-generic
 gcc-5-multilib-mips64el-linux-gnuabi64
 libuptimed-dev
 erlang-dev
@@ -15410,6 +15417,7 @@ gobjc-6-powerpc64-linux-gnu
 mixxx
 libghc-http-date-doc
 libudm-common1
+linux-tools-4.8.0-43-lowlatency
 libtelepathy-glib-dev
 ufw-kde
 libcgi-session-expiresessions-perl
@@ -22114,6 +22122,7 @@ libqpid-perl
 libspiro-dev
 python-grokcore.component
 python-reno-doc
+linux-image-4.8.0-43-lowlatency
 python-django-compat
 micropolis-data
 muroar-bin
@@ -25633,6 +25642,7 @@ libfreeradius-client-dev
 libgrib2c-dev
 libghc-regexpr-prof
 libncl1
+linux-cloud-tools-4.8.0-43-lowlatency
 mgp
 ruby-instance-storage
 mgt
@@ -33765,6 +33775,7 @@ django-tables
 gir1.2-appstream-1.0
 libqxmpp-dev
 gambas3-gb-gui
+linux-signed-image-4.8.0-44-generic
 numix-gtk-theme
 signon-plugin-ubuntuone
 pfqueue
@@ -35046,6 +35057,7 @@ zziplib-bin
 python-pyicu-dbg
 squashfs-tools-dbg
 autojump
+nvidia-375-dev
 t1-oldslavic
 httpry-dbg
 language-pack-gnome-kn-base
@@ -39532,6 +39544,7 @@ r-cran-combinat
 seelablet-common
 git-repair
 libslepc-complex-3.7.2-dev
+linux-headers-4.8.0-43-lowlatency
 python3-botocore
 python-offtrac
 gccgo-5-powerpc-linux-gnuspe
@@ -40293,6 +40306,7 @@ libevdev-dev
 opendrim-lmp-softwareupdate
 python-simpleeval
 ink-generator
+linux-image-4.8.0-43-generic
 syslinux-themes-ubuntu-xenial
 gtk2-engines-oxygen
 libcutl-dev
@@ -41417,6 +41431,7 @@ libreadline5
 libreadline6
 libafsrpc1
 libreadline7
+linux-image-extra-4.8.0-43-generic
 opari
 python-pygresql-dbg
 mate-applet-topmenu
@@ -42205,8 +42220,10 @@ libgtk2.0-common
 xul-ext-pdf.js
 linux-tools-4.8.0-41
 linux-tools-4.8.0-42
+linux-tools-4.8.0-43
 voctomix-core
 libclass-dbi-pager-perl
+linux-tools-4.8.0-44
 libglobus-xio-gsi-driver0
 argus-client
 python-feedparser
@@ -42522,6 +42539,7 @@ science-chemistry
 sblim-cmpi-common
 mate-netbook-dbg
 libgraph-writer-graphviz-perl
+linux-signed-image-4.8.0-44-lowlatency
 python-ntdb
 cm-super-x11
 eekboek
@@ -45847,6 +45865,7 @@ gtkpool
 libgstreamer0.10-0-dbg
 golang-thrift-dev
 libpagemaker-0.0-0
+linux-tools-4.8.0-44-lowlatency
 stone
 bochsbios
 libckit-smlnj
@@ -46704,6 +46723,7 @@ libiscwt-java-doc
 gendarme
 r-cran-future
 python-junit.xml
+nvidia-libopencl1-375
 libalglib3.10
 nemo-gtkhash
 python-testpath-doc
@@ -49191,6 +49211,7 @@ libserial-doc
 ocl-icd-libopencl1
 sabily-grub-artwork
 lib64objc4-mips-cross
+linux-image-4.8.0-44-generic
 libkf5identitymanagement-dbg
 libcplgasgano26
 libkf5runner-dev
@@ -49764,7 +49785,9 @@ hol88-source
 linux-cloud-tools-4.8.0-41
 roxterm
 linux-cloud-tools-4.8.0-42
+linux-cloud-tools-4.8.0-43
 tryton-modules-account-statement
+linux-cloud-tools-4.8.0-44
 libpocoutil9v5-dbg
 freefem-examples
 libdbd-mock-perl
@@ -50353,6 +50376,7 @@ libghc-markdown-dev
 python-pysal
 libc6-dev-mips64-mips-cross
 python-pysam
+linux-image-extra-4.8.0-44-generic
 gccgo-multilib-powerpc-linux-gnu
 kexi-xbase-driver
 gkermit
@@ -52366,6 +52390,7 @@ libsasl2-modules-otp
 libgnat-5-dbg-mipsel-cross
 python3-wtforms
 coop-computing-tools-doc
+linux-image-4.8.0-44-lowlatency
 libconfig-dev
 libngram-tools
 python-zope.catalog
@@ -54144,6 +54169,7 @@ bsh-src
 postgresql-9.5-pgespresso
 python3-django-formtools
 libknot1
+linux-headers-4.8.0-44-generic
 libknot3
 libn32go9-dbg-mips64-cross
 libghc-applicative-quoters-doc
@@ -54354,6 +54380,7 @@ ktorrent-data
 docker-doc
 openctm-tools
 libomxil-bellagio-doc
+nvidia-opencl-icd-375
 libpgobject-type-bigfloat-perl
 r-cran-dplyr
 wgerman-medical
@@ -55791,6 +55818,7 @@ ntopng-data
 libghc-simple-smt-dev
 libs3d2
 libgtkdatabox-0.9.2-0
+nvidia-375
 xfce4-mpc-plugin
 ngspice-doc
 pyrit
@@ -55887,6 +55915,7 @@ libevolution
 qtdeclarative5-poppler1.0
 gccgo-5-arm-linux-gnueabi
 gnome-platform-devel
+linux-cloud-tools-4.8.0-44-lowlatency
 dasher
 libusermetrics-tools
 apachedex
@@ -56560,7 +56589,9 @@ libghc-regex-applicative-dev
 libmagickcore-dev
 libapreq2-dev
 lib32cr0
+linux-headers-4.8.0-43-generic
 libtiffxx5
+linux-tools-4.8.0-43-generic
 r-cran-ggplot2
 python3-manuel
 gir1.2-javascriptcoregtk-4.0
