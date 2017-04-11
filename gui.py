@@ -5,6 +5,7 @@ import tkFileDialog
 from ibm  import *
 from heroku import *
 from pivotel import *
+from engine_yard import *
 
 
 #les function de button
@@ -66,6 +67,11 @@ def aff(pack,titre):
         #heroku_instance.build(ver_package_install,pack,pwd_sys.get())
         heroku_instance.config(pathlabel.get())
         heroku_instance.run(nom.get(),pwd.get())
+    elif(pack == pack_engine_yard):
+        engine_yard_instance = engine_yard()
+        #engine_yard_instance.build(ver_package_install,pack,pwd_sys.get())
+        engine_yard_instance.config(pathlabel.get())
+        engine_yard_instance.run(nom.get(),pwd.get())
     else:
         pivotel_instance =pivotel()
         pivotel_instance.build(ver_package_install,pack,pwd_sys.get())
@@ -97,12 +103,13 @@ root.title("pfe")
 aws_photo=PhotoImage(file="/home/ghost/PycharmProjects/pfe/icone/aws.png")
 ibm_photo=PhotoImage(file="/home/ghost/PycharmProjects/pfe/icone/ibm.png")
 heroku_photo=PhotoImage(file="/home/ghost/PycharmProjects/pfe/icone/heroku.png")
-pivotel_photo=PhotoImage(file="icone/pivotel.png")
+pivotel_photo=PhotoImage(file="/home/ghost/PycharmProjects/pfe/icone/pivotel.png")
 ver_package_install='verifier_la_instalation_des_logiciel.sh'
 pack_aws="awscli"
 pack_ibm='cf-cli'
 pack_pivotel=pack_ibm
 pack_heroku='heroku'
+pack_engine_yard='engineyard'
 #utilisation de function lambda a cause de fonction avec argement declanche click sourie
 aws_button = Button ( root,text="aws",image=aws_photo,width=100,height=50,command=lambda :fun(pack_aws,'Amazon AWS'))
 
@@ -116,6 +123,8 @@ heroku_button =Button(root,text="heroku",image=heroku_photo,width=100,height=50,
 heroku_button.place(x=210,y=10)
 pivotel_button =Button(root,text="pivotel",image=pivotel_photo,width=100,height=50,command=lambda :fun(pack_pivotel,'Pivotel'))
 pivotel_button.place(x=310,y=10)
+engine_yard_button =Button(root,text="engine yard",image=pivotel_photo,width=100,height=50,command=lambda :fun(pack_engine_yard,'engine yard'))
+engine_yard_button.place(x=10,y=70)
 root.mainloop()
 
 

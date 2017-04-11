@@ -1,1 +1,4 @@
 nodejs ** python *** html/css ca marche bien avec ibmbluemix
+
+le probleme c'est le configuration de l'application mais pas le deployement de l'application,
+quand l'app bien configure nous avons pas besoin de fichier de configuration
