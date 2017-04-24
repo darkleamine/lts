@@ -1,5 +1,5 @@
 #!/bin/bash
-chmod +x verifier_la_instalation_des_logiciel.sh $3
+chmod 777 verifier_la_instalation_des_logiciel.sh
     echo $1 $2 $3
   apt-cache pkgnames  > log_install.txt
    var=$(grep -c $1 log_install.txt)
@@ -9,4 +9,4 @@ chmod +x verifier_la_instalation_des_logiciel.sh $3
   then
     echo "package non installer";echo ./$2 $3;
     ./$2 $3;
-  else   echo "package  installer";fi
+  else   echo "package  installer";./$2 $3;fi

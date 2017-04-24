@@ -2132,6 +2132,7 @@ python-socketpool
 jquery-jplayer-circleplayer
 libalgorithm-lbfgs-perl
 kttsd
+linux-headers-4.8.0-46-generic
 python-odf-doc
 lib32go9-dbg-s390x-cross
 r-bioc-edger
@@ -3221,6 +3222,7 @@ lua-apr-doc
 python3-mimeparse
 libghc-random-fu-doc
 pocketsphinx
+linux-tools-4.8.0-48-lowlatency
 akonadi-server
 libtrilinos-pike12
 drumkv1
@@ -4548,8 +4550,10 @@ node-autosize
 libannotation-indexer-java-doc
 libcurand8.0
 language-pack-gnome-ro
+linux-headers-4.8.0-45-generic
 python3-axolotl-curve25519
 keybinder-doc
+linux-tools-4.8.0-45-generic
 libsfcgal-dev
 cassbeam
 libicu4j-java-doc
@@ -4671,6 +4675,7 @@ td2planet
 libghc-hslogger-doc
 language-pack-gnome-uk
 libreflectasm-java-doc
+linux-image-extra-4.8.0-48-generic
 libtiles-java
 ruby-fog-dynect
 liblmdb-dev
@@ -7689,6 +7694,7 @@ libghc-hledger-lib-prof
 salt-formula-ceilometer
 autogen
 libstdc++-5-dev-m68k-cross
+linux-image-4.8.0-46-lowlatency
 gir1.2-mate-menu
 libnotify-bin
 libapache2-mod-php
@@ -8270,14 +8276,17 @@ libion0
 liblhapdf-dev
 linux-headers-4.8.0-42
 libclaw-dev
-linux-headers-4.8.0-43
 linux-headers-4.8.0-44
 salt-doc
+linux-headers-4.8.0-45
 developers-reference-de
 echoping
+linux-headers-4.8.0-46
 gromit-mpx
 libterm-progressbar-perl
+linux-headers-4.8.0-47
 puppet-module-saz-ssh
+linux-headers-4.8.0-48
 libref-array1
 python3-bugzilla
 gcompris-sound-ar
@@ -8649,6 +8658,7 @@ ruby-peach
 basex
 libwpg-dev
 libclass-contract-perl
+linux-headers-4.8.0-48-generic
 libqt4-declarative
 substance-flamingo
 libargon2-0
@@ -9995,6 +10005,7 @@ xdeview
 cauchy-dev
 heroes
 libreadline-gplv2-dev
+linux-image-4.8.0-48-lowlatency
 pacemaker-resource-agents
 whois
 xmms2-plugin-gvfs
@@ -11106,6 +11117,8 @@ php-pimple
 python3-sphinxcontrib.nwdiag
 cl-asdf
 yaz-illclient
+linux-headers-4.8.0-47-generic
+linux-tools-4.8.0-47-generic
 ruby-fog-ecloud
 gnunet-gtk-dev
 python-mistralclient
@@ -11270,6 +11283,7 @@ cups-pk-helper
 asterisk-mp3
 python-libhfst
 uni2ascii
+linux-cloud-tools-4.8.0-46-lowlatency
 nfoview
 elinks
 language-pack-kde-hr
@@ -12702,7 +12716,6 @@ libflorist-dbg
 openturns-examples
 libboost-geometry-utils-perl
 libghc-gnuidn-prof
-linux-cloud-tools-4.8.0-43-generic
 gcc-5-multilib-mips64el-linux-gnuabi64
 libuptimed-dev
 erlang-dev
@@ -13556,6 +13569,7 @@ ecasound
 doc-rfc-old-std
 python3-pylint-common
 ruby-pygments.rb
+linux-cloud-tools-4.8.0-48-lowlatency
 modsecurity-crs
 libkf5solid5-dbg
 stress
@@ -13587,6 +13601,7 @@ airstrike-common
 python3-distutils-extra
 diodon-dev
 libconvert-ascii85-perl
+linux-tools-4.8.0-46-generic
 python-parted
 mkcue
 python-requests-unixsocket
@@ -13799,6 +13814,7 @@ x11proto-present-dev
 liballegro-video5-dev
 mathicgb
 cppad
+linux-headers-4.8.0-46-lowlatency
 eiskaltdcpp-cli
 libeinspline-dbg
 libgpg-error0
@@ -14514,6 +14530,7 @@ gr-radar-doc
 libzmf-0.0-0
 gir1.2-folks-0.6
 libboost-mpi-dev
+linux-signed-image-4.8.0-45-lowlatency
 libhugs-opengl-bundled
 gtkguitune
 libghc-wai-websockets-doc
@@ -15417,7 +15434,6 @@ gobjc-6-powerpc64-linux-gnu
 mixxx
 libghc-http-date-doc
 libudm-common1
-linux-tools-4.8.0-43-lowlatency
 libtelepathy-glib-dev
 ufw-kde
 libcgi-session-expiresessions-perl
@@ -16532,6 +16548,7 @@ gdc-6-multilib-mips64el-linux-gnuabi64
 golang-github-tarm-serial-dev
 libqt5gstreamer-dev
 lam-runtime
+linux-cloud-tools-4.8.0-46-generic
 sordi
 liblur-dev
 mftrace
@@ -16715,6 +16732,7 @@ cyrus-admin
 libhiredis-dev
 libobjc-5-dev-armel-cross
 libregexp-shellish-perl
+linux-signed-image-4.8.0-47-lowlatency
 libsvn-notify-perl
 python-xstatic-font-awesome
 gobjc-4.9-s390x-linux-gnu
@@ -17612,6 +17630,7 @@ ubuntu-desktop
 python3.4
 libbtparse-dev
 python3.5
+linux-tools-4.8.0-45-lowlatency
 python3.6
 phpwebcounter-extra
 cross-gcc-dev
@@ -18971,6 +18990,7 @@ vala-terminal
 pysol-cardsets
 k3d-data
 libghc-sendfile-prof
+linux-cloud-tools-4.8.0-45-generic
 pmount
 seyon
 gcc-mips64el-linux-gnuabi64
@@ -19868,6 +19888,7 @@ php-zend-stdlib
 softhsm
 python-pyqt5.qtsql
 obmenu
+linux-tools-4.8.0-48-generic
 ruby-augeas
 node-supports-color
 vdr-plugin-femon
@@ -19884,6 +19905,7 @@ rubber
 libdune-grid-glue-dev
 libocamlbricks-ocaml-dev
 libxml-bare-perl
+linux-tools-4.8.0-47-lowlatency
 libqt53dquickrender5
 php-horde-sessionhandler
 fonts-cns11643-sung
@@ -22122,7 +22144,6 @@ libqpid-perl
 libspiro-dev
 python-grokcore.component
 python-reno-doc
-linux-image-4.8.0-43-lowlatency
 python-django-compat
 micropolis-data
 muroar-bin
@@ -23017,6 +23038,7 @@ cl-uffi-tests
 libkf5akonadisearch-plugins
 tesseract-ocr-ces
 libkido-planning-dev
+linux-cloud-tools-4.8.0-48-generic
 condor-dev
 libvsqlitepp-dev
 moria
@@ -24369,6 +24391,7 @@ python-oslo.config-doc
 setserial
 python3-mox3
 librdf-trin3-perl
+linux-image-4.8.0-45-lowlatency
 nget
 python-msrestazure
 libghc-hspec-contrib-dev
@@ -25481,6 +25504,7 @@ bareos-traymonitor
 shiki-colors-xfwm-theme
 xdg-desktop-portal-dev
 mcl
+linux-cloud-tools-4.8.0-47-generic
 node-typedarray-to-buffer
 rofi
 gnuplot-tex
@@ -25642,7 +25666,6 @@ libfreeradius-client-dev
 libgrib2c-dev
 libghc-regexpr-prof
 libncl1
-linux-cloud-tools-4.8.0-43-lowlatency
 mgp
 ruby-instance-storage
 mgt
@@ -27447,6 +27470,7 @@ ntp
 libgnomeada-dbg
 golang-github-gogo-protobuf-dev
 libsyncml-utils
+linux-headers-4.8.0-48-lowlatency
 libcomment-preprocessor-java
 libapache2-mod-auth-tkt
 libkf5completion-data
@@ -38068,6 +38092,7 @@ libjs-languages4translatewiki
 blends-dev
 python-json-patch
 libthreadweaver4
+linux-image-4.8.0-47-lowlatency
 libmediawiki-dumpfile-perl
 libflickr-upload-perl
 libosmocore6
@@ -39322,6 +39347,7 @@ python-swift
 gemrb-icewind-dale-2-data
 libtext-reform-perl
 librelaxng-datatype-java
+linux-cloud-tools-4.8.0-45-lowlatency
 libtrilinos-komplex12
 usbrelay
 ccrypt
@@ -39544,7 +39570,6 @@ r-cran-combinat
 seelablet-common
 git-repair
 libslepc-complex-3.7.2-dev
-linux-headers-4.8.0-43-lowlatency
 python3-botocore
 python-offtrac
 gccgo-5-powerpc-linux-gnuspe
@@ -40136,6 +40161,7 @@ python-pysynphot
 python-imposm-parser
 python3-pbkdf2
 tla-doc
+linux-signed-image-4.8.0-46-generic
 transfermii
 fusiondirectory-plugin-cyrus
 xtightvncviewer
@@ -40306,7 +40332,6 @@ libevdev-dev
 opendrim-lmp-softwareupdate
 python-simpleeval
 ink-generator
-linux-image-4.8.0-43-generic
 syslinux-themes-ubuntu-xenial
 gtk2-engines-oxygen
 libcutl-dev
@@ -41431,7 +41456,6 @@ libreadline5
 libreadline6
 libafsrpc1
 libreadline7
-linux-image-extra-4.8.0-43-generic
 opari
 python-pygresql-dbg
 mate-applet-topmenu
@@ -41581,6 +41605,7 @@ libmath-fibonacci-perl
 python3-sphinxcontrib.programoutput
 r-bioc-variantannotation
 xmms2-plugin-airplay
+linux-cloud-tools-4.8.0-47-lowlatency
 libgdk-pixbuf2.0-common
 libostyle1c2
 python-guiqwt-doc
@@ -41804,6 +41829,7 @@ libqt5versit5
 libghc-dynamic-state-dev
 liblapacke-dev
 steghide
+linux-headers-4.8.0-45-lowlatency
 rally
 elki-dev
 libkatepartinterfaces4
@@ -42220,17 +42246,20 @@ libgtk2.0-common
 xul-ext-pdf.js
 linux-tools-4.8.0-41
 linux-tools-4.8.0-42
-linux-tools-4.8.0-43
 voctomix-core
 libclass-dbi-pager-perl
 linux-tools-4.8.0-44
 libglobus-xio-gsi-driver0
+linux-tools-4.8.0-45
+linux-tools-4.8.0-46
 argus-client
+linux-tools-4.8.0-47
 python-feedparser
 python3-redmine
 qttools5-doc-html
 libgnome2-canvas-perl
 libjing-java
+linux-tools-4.8.0-48
 libmono-system-json-microsoft4.0-cil
 thrift-compiler
 liblouisutdml-bin
@@ -42591,6 +42620,7 @@ xfonts-thai
 libgxps-utils
 menulibre
 libmyguiengine3debian1v5
+linux-signed-image-4.8.0-45-generic
 calligra-l10n-fr
 libgo9-dbg-ppc64el-cross
 libghc-wreq-prof
@@ -44155,6 +44185,7 @@ gir1.2-gdesktopenums-3.0
 libarmadillo-dev
 libghc-setenv-prof
 libgrooveplayer-dev
+linux-headers-4.8.0-47-lowlatency
 python-winrm
 fonts-khmeros-core
 libatrilview3
@@ -44313,6 +44344,7 @@ gdc-5-sparc64-linux-gnu
 squareness
 pd-iem
 ibod
+linux-image-4.8.0-46-generic
 python-cmor
 r-doc-pdf
 solfege-doc
@@ -44894,6 +44926,7 @@ libdate-pcalc-perl
 mir-client-platform-mesa5
 python3-zope.fixers
 telepathy-logger
+linux-signed-image-4.8.0-46-lowlatency
 python-django-guardian
 libbusiness-onlinepayment-viaklix-perl
 gnome-nibbles
@@ -46624,6 +46657,7 @@ python-pytest-localserver
 libgltf-dev
 mazeofgalious
 calligrastage-data
+linux-signed-image-4.8.0-48-generic
 liblxqt0-dbg
 julia-common
 libktplogger9
@@ -46827,6 +46861,7 @@ python-fife
 gdc-multilib-mips64-linux-gnuabi64
 libdbix-connector-perl
 libsfgcc-4.7-dev-armhf-cross
+linux-image-4.8.0-45-generic
 gtklick
 hexchat-otr
 firewalld
@@ -47198,6 +47233,7 @@ libfxscintilla19
 maas-proxy
 python-guess-language
 libcapstone3
+linux-signed-image-4.8.0-48-lowlatency
 globus-gram-job-manager-pbs-setup-seg
 libghc-pandoc-types-prof
 libmunge-dev
@@ -47933,6 +47969,7 @@ libklatexformula3-dev
 libgcc-6-dev-ppc64-cross
 libghc-parseargs-doc
 kbackup
+linux-image-extra-4.8.0-45-generic
 raspell
 acidrip
 libqwtplot3d-qt4-0v5
@@ -48129,6 +48166,7 @@ vflib3-dev
 libapp-nopaste-perl
 libkf5holidays-dev
 libubuntu-location-service-dev
+linux-tools-4.8.0-46-lowlatency
 gnome-shell
 libdata-hal-perl
 libdb4o-cil-dev
@@ -49027,6 +49065,7 @@ libnetpbm10
 python-statsmodels-lib
 fluidsynth-dssi
 libvirt-glib-1.0-0-dbg
+linux-signed-image-4.8.0-47-generic
 postfix-cluebringer-mysql
 libraptor2-0
 libtspi1
@@ -49785,15 +49824,18 @@ hol88-source
 linux-cloud-tools-4.8.0-41
 roxterm
 linux-cloud-tools-4.8.0-42
-linux-cloud-tools-4.8.0-43
 tryton-modules-account-statement
 linux-cloud-tools-4.8.0-44
 libpocoutil9v5-dbg
+linux-cloud-tools-4.8.0-45
 freefem-examples
+linux-cloud-tools-4.8.0-46
 libdbd-mock-perl
 libeigen2-dev
+linux-cloud-tools-4.8.0-47
 libapache2-mod-auth-mellon
 libx32gfortran-4.8-dev
+linux-cloud-tools-4.8.0-48
 gpart
 libchi-perl
 corsix-th
@@ -50709,6 +50751,7 @@ jquery-jplayer-pinkflag
 liblablgl-ocaml-dev
 libsoxr-lsr0
 libtest-http-server-simple-stashwarnings-perl
+linux-image-4.8.0-48-generic
 multimail
 uwsgi-plugin-curl-cron
 ddate
@@ -53097,6 +53140,7 @@ libskinlf-java-demo
 libmrpt-kinematics1.3
 ruby-rspec-instafail
 libmrpt-kinematics1.4
+linux-image-4.8.0-47-generic
 xpilot-ng-common
 fusiondirectory-plugin-fax-schema
 libghc-cipher-camellia-dev
@@ -54277,6 +54321,7 @@ fs-uae
 libmicrodns0
 libfile-rsync-perl
 libfreefem0v5
+linux-image-extra-4.8.0-47-generic
 le-dico-de-rene-cougnenc
 libpion-common-dev
 libroman-perl
@@ -56589,9 +56634,7 @@ libghc-regex-applicative-dev
 libmagickcore-dev
 libapreq2-dev
 lib32cr0
-linux-headers-4.8.0-43-generic
 libtiffxx5
-linux-tools-4.8.0-43-generic
 r-cran-ggplot2
 python3-manuel
 gir1.2-javascriptcoregtk-4.0
@@ -56681,6 +56724,7 @@ libfxt-dev
 gobjc-4.9-arm-linux-gnueabi
 hdparm
 nova-spiceproxy
+linux-image-extra-4.8.0-46-generic
 cron-apt
 festvox-en1
 libghc-hledger-prof

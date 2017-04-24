@@ -7,18 +7,6 @@ from heroku import *
 from pivotel import *
 from engine_yard import *
 
-
-#les function de button
-
-
-
-
-########################################################################################################################
-
-########################################################################################################################
-
-
-
 ########################################################################################################################
 def fun(pack,titre):
      #verifieir l'installation de package
@@ -54,14 +42,17 @@ def fun(pack,titre):
      #ibm_instance.build('verifier_la_instalation_des_logiciel.sh', 'cf-cli', 'darkle09')
 
 def aff(pack,titre):
-
+    fiche = open("console.txt", 'w+')
+    mots = fiche.read()
+    print mots
+    console.insert(INSERT,mots)
     print nom.get(),pwd.get(),pwd_sys.get(),"package =",pack;pathlabel.get()
 
     if(pack == pack_ibm and titre=='IBM'):
        ibm_instance = ibm()
-       ibm_instance.build(ver_package_install, pack, pwd_sys.get())
-       ibm_instance.config(pathlabel.get())
-       ibm_instance.run(nom.get(),pwd.get())
+       #ibm_instance.build(ver_package_install, pack, pwd_sys.get())
+       #ibm_instance.config(pathlabel.get())
+       #ibm_instance.run(nom.get(),pwd.get())
     elif(pack == pack_heroku):
         heroku_instance = heroku()
         #heroku_instance.build(ver_package_install,pack,pwd_sys.get())
@@ -82,20 +73,19 @@ def repertoire(pathlabel):
         pathlabel.delete(0,END)
         dirc = tkFileDialog.askdirectory(initialdir='/home/ghost', title='Select your app folder')
         pathlabel.insert(0,dirc)
-
-
-
-
-
-
-        #to change the entry in password use show option
+#to change the entry in password use show option
+def getinfo():
+    #os.system('python gui.py >console.txt')
+    #sys.stdout = open("console.txt", 'w+')
+    sys.stdout =os.system('pwd')
 
 
 ########################################################################################################################
 
 
 root=Tk()
-root.wm_minsize(450,200)
+root.wm_minsize(450,280)
+root.wm_maxsize(600,600)
 root.title("pfe")
 #global pack
 
@@ -125,6 +115,16 @@ pivotel_button =Button(root,text="pivotel",image=pivotel_photo,width=100,height=
 pivotel_button.place(x=310,y=10)
 engine_yard_button =Button(root,text="engine yard",image=pivotel_photo,width=100,height=50,command=lambda :fun(pack_engine_yard,'engine yard'))
 engine_yard_button.place(x=10,y=70)
+console = Text(root,bg="black",fg="white")
+fiche=open("console.txt","r")
+mot=fiche.readline()
+print mot
+console.insert(END,'console.txt')
+
+
+console.place(x=20,y=150,height=150,width=420)
+
+
 root.mainloop()
 
 
@@ -182,24 +182,5 @@ root.mainloop()
 
 
 
-""""
-
- diectory_=Label(ibm_config,text="directory",font="bold")
 
 
-
-####################################
- directory = Button(ibm_config,text="directory" ,command=repertoire())
-
- #path.grid(row=2, column=0)
- directory.grid(row=2, column=1)
-
-
- path =Label(ibm_config,text="al",width="30")
- def inf():
-     print(Motdepasse," ",name)
- inf = Button(ibm_config, text="information", command=inf())
- inf.grid(row=2, column=2)
-
-
-"""

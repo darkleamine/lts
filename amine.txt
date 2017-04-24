@@ -1,0 +1,28 @@
+cf-cli cf_cli_install.sh darkle09
+package  installer
+/home/ghost/Téléchargements/app test/nodejs/node-js-getting-started
+Noeud final de l'API : https://api.ng.bluemix.net
+Authentification...
+OK
+
+Organisation ciblée koudjil@live.fr
+
+Espace ciblé koudjil
+
+
+
+Noeud final d'API :   https://api.ng.bluemix.net (Version de l'API : 2.54.0)
+Utilisateur :         koudjil@live.fr
+Organisation :        koudjil@live.fr
+Espace :              koudjil
+Mise à jour de l'application asma12 dans l'organisation koudjil@live.fr / l'espace koudjil en tant que koudjil@live.fr...
+OK
+
+Téléchargement de asma12...
+Téléchargement des fichiers d'application depuis : /home/ghost/Téléchargements/app test/nodejs/node-js-getting-started
+Téléchargement de 433K, 443 fichier(s)
+                             Done uploading
+OK
+
+
+Démarrage de l'application asma12 dans l'organisation koudjil@live.fr / l'espace koudjil en tant que koudjil@live.fr...
