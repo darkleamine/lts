@@ -56,7 +56,7 @@ def aff(pack,titre):
     elif(pack == pack_heroku):
         heroku_instance = heroku()
         #heroku_instance.build(ver_package_install,pack,pwd_sys.get())
-        heroku_instance.config(pathlabel.get())
+        #heroku_instance.config(pathlabel.get())
         heroku_instance.run(nom.get(),pwd.get())
     elif(pack == pack_engine_yard):
         engine_yard_instance = engine_yard()

@@ -1,61 +1,4 @@
-"""
-from Tkinter import *
 
-class SampleApp(Tk):
-
-    def __init__(self):
-        Tk.__init__(self)
-        # http://effbot.org/tkinterbook/photoimage.htm
-
-        ibm_photo = PhotoImage(file="/home/ghost/PycharmProjects/pfe/icone/ibm.png")
-        heroku_photo = PhotoImage(file="/home/ghost/PycharmProjects/pfe/icone/heroku.png")
-
-        # les function de button
-        def heroku_fun():
-            print("hello from heroku provider")
-
-        ########################################################################################################################
-
-
-        def ibm_fun():
-            print "hello from ibm provider"
-
-        aws_photo = PhotoImage(file="/home/ghost/PycharmProjects/pfe/icone/aws.png")
-        self.aws_button = Button(self, text="aws",width=100, height=50, command=self.aws_fun,font='bold')
-        self.aws_button.place(x=10,y=10)
-
-
-
-
-        #ibm_button = Button(self, text="ibm", image=ibm_photo, width=91, height=50, command=ibm_fun)
-        #self.ibm_button.place(x=105, y=10)
-        #heroku_button = Button(self, text="heroku", image=heroku_photo, width=100, height=50, command=self.heroku_fun)
-        #self.heroku_button.place(x=210, y=10)
-
-        #self.entry = Entry(self)
-        #self.button = Button(self, text="Get", command=self.on_button)
-        #self.button.pack()
-        #self.entry.pack()
-
-    def on_button(self):
-             print(self.entry.get())
-    def aws_fun (self):
-        ibm_config = Tk()
-        ibm_config.title("ibm")
-        ibm_config.config()
-        ibm_config.wm_minsize(250, 200)
-        entree = Entry(ibm_config)
-        entree.pack()
-        def saisie():
-            print entree.get()
-
-        bou1 = Button(ibm_config, text='valider', command=saisie)
-        bou1.pack()
-
-
-w = SampleApp()
-w.mainloop()
-"""
 #/usr/bin/python2.7
 from  Tkinter import *
 import tkFileDialog
@@ -76,14 +19,20 @@ class gui:
          print nom.get(),pwd.get(),pwd_sys.get(),"package =",pack;pathlabel.get()
          if(pack == pack_ibm and titre=='IBM'):
              ibm_instance = ibm()
-             ibm_instance.build(ver_package_install, pack, pwd_sys.get())
+             #ibm_instance.build(ver_package_install, pack, pwd_sys.get())
              ibm_instance.config(pathlabel.get())
-             ibm_instance.run(nom.get(),pwd.get())
+             login,deploy=ibm_instance.run(nom.get(),pwd.get())
+             console.insert(END, login)
+             console.insert(END,deploy)
+
+
          elif(pack == pack_heroku):
                heroku_instance = heroku()
-               heroku_instance.build(ver_package_install,pack,pwd_sys.get())
-               heroku_instance.config(pathlabel.get())
-               #heroku_instance.run(nom.get(),pwd.get())
+               #heroku_instance.build(ver_package_install,pack,pwd_sys.get())
+               #heroku_instance.config(pathlabel.get())
+               heroku_instance.run(nom.get(),pwd.get())
+               heroku_instance.apps("/home/ghost/PycharmProjects/pfe/file_generation/heroku_app.txt")
+
          elif(pack == pack_engine_yard):
                engine_yard_instance = engine_yard()
                engine_yard_instance.build(ver_package_install,pack,pwd_sys.get())
@@ -141,7 +90,7 @@ class gui:
 
      def __init__(self):
                  root=Tk()
-                 root.wm_minsize(450,280)
+                 root.wm_minsize(600,350)
                  root.wm_maxsize(600,600)
                  root.title("pfe")
 #global pack
@@ -152,7 +101,7 @@ class gui:
                  heroku_photo=PhotoImage(file="/home/ghost/PycharmProjects/pfe/icone/heroku.png")
                  pivotel_photo=PhotoImage(file="/home/ghost/PycharmProjects/pfe/icone/pivotel.png")
 
-                 global pack_aws,pack_ibm,pack_pivotel,pack_heroku,pack_engine_yard,ver_package_install
+                 global pack_aws,pack_ibm,pack_pivotel,pack_heroku,pack_engine_yard,ver_package_install,console
                  ver_package_install = 'verifier_la_instalation_des_logiciel.sh'
                  pack_aws="awscli"
                  pack_ibm='cf-cli'
@@ -175,8 +124,7 @@ class gui:
                  engine_yard_button =Button(root,text="engine yard",image=pivotel_photo,width=100,height=50,command=lambda :self.fun(pack_engine_yard,'engine yard'))
                  engine_yard_button.place(x=10,y=70)
                  console = Text(root,bg="black",fg="white")
-                 console.insert(END,'console.txt')
-                 console.place(x=20,y=150,height=150,width=420)
+                 console.place(x=20,y=150,height=150,width=540)
                  root.mainloop()
 
 gui =gui()
