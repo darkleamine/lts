@@ -21,18 +21,16 @@ class gui:
              ibm_instance = ibm()
              #ibm_instance.build(ver_package_install, pack, pwd_sys.get())
              ibm_instance.config(pathlabel.get())
-             login,deploy=ibm_instance.run(nom.get(),pwd.get())
-             console.insert(END, login)
-             console.insert(END,deploy)
+             output=ibm_instance.run(nom.get(),pwd.get())
+             console.insert(END, output)
 
 
          elif(pack == pack_heroku):
                heroku_instance = heroku()
                #heroku_instance.build(ver_package_install,pack,pwd_sys.get())
-               #heroku_instance.config(pathlabel.get())
-               heroku_instance.run(nom.get(),pwd.get())
-               heroku_instance.apps("/home/ghost/PycharmProjects/pfe/file_generation/heroku_app.txt")
-
+               heroku_instance.config(pathlabel.get())
+               output2=heroku_instance.run(nom.get(),pwd.get())
+               console.insert(END,output2)
          elif(pack == pack_engine_yard):
                engine_yard_instance = engine_yard()
                engine_yard_instance.build(ver_package_install,pack,pwd_sys.get())
@@ -124,11 +122,14 @@ class gui:
                  engine_yard_button =Button(root,text="engine yard",image=pivotel_photo,width=100,height=50,command=lambda :self.fun(pack_engine_yard,'engine yard'))
                  engine_yard_button.place(x=10,y=70)
                  console = Text(root,bg="black",fg="white")
-                 console.place(x=20,y=150,height=150,width=540)
+                 console.place(x=10,y=150,height=150,width=540)
+                 button_scrollbar = Scrollbar(console,bg="#696969",activebackground="#696969")
+                 button_scrollbar.pack(side=RIGHT, fill=Y)
+                 console.config(  yscrollcommand = button_scrollbar.set)
                  root.mainloop()
 
 gui =gui()
-sys.stdout = open('ey.yml', 'w')
+
 
 
 
