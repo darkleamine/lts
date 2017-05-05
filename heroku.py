@@ -1,5 +1,8 @@
 import os
 import subprocess
+from subprocess import CalledProcessError
+
+
 class heroku:
     def __init__(self):
         pass
@@ -23,19 +26,36 @@ class heroku:
 
 
         ################################################################################################################
-    def run(self,email,pwd):
+    def run(self,email,pwd,nom_app):
         auth = open("data.txt", "w")
         auth.write(email+'\n');auth.write(pwd);auth.close()
         #os.system('heroku  < data.txt ')
-        login=subprocess.check_output(["heroku <data.txt"],shell=True)
+        try:
+           login=subprocess.getoutput("heroku <data.txt")
+        except subprocess.CalledProcessError as e:
+            raise RuntimeError(
+                "command login '{}' return with error (code {}): {}".format(e.cmd, e.returncode, e.output))
         os.system('rm data.txt')
         #os.system('heroku create ')
-        create=subprocess.check_output(['heroku create'],shell=True)
-        #os.system('git push heroku master')
-        #deploy=subprocess.check_output(['git push heroku master'])
+        try:
+            create=subprocess.getoutput("heroku create "+nom_app)
+        except subprocess.CalledProcessError as e:
+            raise RuntimeError(
+                "command create '{}' return with error (code {}): {}".format(e.cmd, e.returncode, e.output))
+        os.system('git remote -v')
+        os.system('git remote set-url heroku https://git.heroku.com/'+nom_app+'.git')
+        try:
+            deploy = subprocess.getoutput("git push heroku master")
+        except subprocess.CalledProcessError as e:
+            raise RuntimeError("command deploy '{}' return with error (code {}): {}".format(e.cmd, e.returncode, e.output))
+
         #os.system('heroku apps')
-        apps=subprocess.check_output(['heroku apps'],shell=True)
-        return login+create+apps#++deploy+apps
+        try:
+           apps=subprocess.getoutput("heroku apps")
+        except subprocess.CalledProcessError as e:
+            raise RuntimeError("command apps '{}' return with error (code {}): {}".format(e.cmd, e.returncode, e.output))
+        os.system("heroku open")
+        return login,create,deploy,apps
 
         ################################################################################################################
     def config(self,dirctory):

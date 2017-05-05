@@ -28,7 +28,7 @@ class pivotel:
         #os.system(cool)
 
         ################################################################################################################
-    def run(self,email,pwd):
+    def run(self,email,pwd,nom_app):
         #os.system('cf api https://api.ng.bluemix.net')
         #os.system('cf login -a https://api.ng.bluemix.net -u koudjil1@live.fr -p "Darkle09&"')
         list = []
@@ -39,23 +39,59 @@ class pivotel:
         list.append(' -p ');
         list.append("\"" + pwd + "\"");  # list.append(' -s koudjil')
         a = "".join(list)
-        print a
+        print (a)
 
-        os.system(a)
-        os.system('cf push asma12')
+        #os.system(a)
+        #login= subprocess.check_output([a],shell=True,stderr=subprocess.STDOUT)
+        try:
+            login = subprocess.getoutput(a)
+        except subprocess.CalledProcessError as e:
+            raise RuntimeError(
+                "command login '{}' return with error (code {}): {}".format(e.cmd, e.returncode, e.output))
+        try:
+            deploy = subprocess.getoutput("cf push "+nom_app)
+        except subprocess.CalledProcessError as e:
+            raise RuntimeError(
+                "command deploy '{}' return with error (code {}): {}".format(e.cmd, e.returncode, e.output))
+        try:
+            apps = subprocess.getoutput("cf apps")
+        except subprocess.CalledProcessError as e:
+            raise RuntimeError(
+                "command apps '{}' return with error (code {}): {}".format(e.cmd, e.returncode, e.output))
 
+        return login,deploy,apps
 
         ################################################################################################################
-    def config(self,dirctory):
+    def config(self,dirctory,nom_app):
         print ("derictory ", dirctory)
         list = [];
         list.append(dirctory)
         # subprocess.call(dirctory)
         os.chdir(dirctory)
         os.system("pwd")
+        fichiers=os.listdir(dirctory)
+        print (fichiers)
+        exist= "package.json" in fichiers
+        print("exist valeur ==",exist)
+
+        Fichier = open('manifest.yml', 'w')
+        Fichier.write("--- \n")
+        Fichier.write("applications: \n")
+        Fichier.write("- name : "+nom_app+"\n")
+        Fichier.write("  memory : 128M \n")
+
+        if "package.json" in fichiers:
+            Fichier.write("  buildpack : https://github.com/cloudfoundry/nodejs-buildpack.git \n")#donner le buildpack pour nodejs
+        elif "requirements.txt" in fichiers:
+            Fichier.write("  buildpack : https://github.com/cloudfoundry/python-buildpack.git \n")#donner le buildpack pour python
+        elif "composer.json" in fichiers:
+            Fichier.write("  buildpack : https://github.com/cloudfoundry/php-buildpack.git \n")#donner le buildpack pour php
+        # Fichier.write("  instances : 2 \n")
+        Fichier.close()
 
 
-#pivotel_instance = pivotel('verifier_la_instalation_des_logiciel.sh','cf-cli','darkle09')
+
+#pivotel_instance = pivotel()
 #pivotel_instance.build('verifier_la_instalation_des_logiciel.sh','cf-cli','darkle09')
-#pivotel_instance.config()
+#pivotel_instance.config("/home/ghost/Téléchargements/app test/nodejs/node-js-getting-started")
 #pivotel_instance.run()

@@ -1,4 +1,3 @@
-
 #/usr/bin/python2.7
 from  Tkinter import *
 import tkFileDialog
@@ -16,7 +15,7 @@ class gui:
 
      def aff(self,pack,titre):
 
-         print nom.get(),pwd.get(),pwd_sys.get(),"package =",pack;pathlabel.get()
+         print (nom.get(),pwd.get(),pwd_sys.get(),"package =",pack,pathlabel.get())
          if(pack == pack_ibm and titre=='IBM'):
              ibm_instance = ibm()
              #ibm_instance.build(ver_package_install, pack, pwd_sys.get())
@@ -47,10 +46,6 @@ class gui:
         dirc = tkFileDialog.askdirectory(initialdir='/home/ghost', title='Select your app folder')
         pathlabel.insert(0,dirc)
 #to change the entry in password use show option
-     def getinfo():
-           #os.system('python gui.py >console.txt')
-           #sys.stdout = open("console.txt", 'w+')
-           sys.stdout =os.system('pwd')
 
 
 ########################################################################################################################
@@ -64,8 +59,11 @@ class gui:
          ibm_config.wm_minsize(250, 200)
          global nom,pwd,pwd_sys,pathlabel
          nom = Entry(ibm_config,bg="white")
+         nom.insert(0,"koudjil10@gmail.com")
          pwd = Entry(ibm_config, show="*",bg="white")
+         pwd.insert(0,"Darkle09&")
          pwd_sys=Entry(ibm_config,show='*',bg="white")
+         pwd_sys.insert(0,"darkle09")
          nom_label = Label(ibm_config, text="email", font='bold')
          pwd_label = Label(ibm_config, text="pwd", font='bold')
          pwd_sys_label = Label(ibm_config, text='pwd_sys', font='bold')

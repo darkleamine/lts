@@ -34,11 +34,11 @@ class ibm:
           list =[]
           list.append('cf ');list.append('login -a ');list.append('https://api.ng.bluemix.net -u ');list.append(email);list.append(' -p ');list.append("\""+pwd+"\"");#list.append(' -s koudjil')
           a="".join(list)
-          print a
+          print (a)
           #login = subprocess.check_output(['cf login -a https://api.ng.bluemix.net -u koudjil@live.fr -p "Darkle09&"'],shell=True)
           login = subprocess.check_output([a],shell=True)
           #os.system(a)
-          deploy= subprocess.check_output(['git push heroku master'],shell=True)
+          deploy= subprocess.check_output(['cf push0'],shell=True)
           apps = subprocess.check_output(['cf apps'],shell=True)
           #os.system('cf push asma12')
           return login+deploy+apps
