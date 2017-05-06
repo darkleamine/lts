@@ -27,7 +27,7 @@ class ibm:
 
         ################################################################################################################
 
-    def run(self,email,pwd):
+    def run(self,email,pwd,nom_app):
           #os.system('cf api https://api.ng.bluemix.net')
           #os.system('cf login -a https://api.ng.bluemix.net -u koudjil1@live.fr -p "Darkle09&"')
 
@@ -36,15 +36,28 @@ class ibm:
           a="".join(list)
           print (a)
           #login = subprocess.check_output(['cf login -a https://api.ng.bluemix.net -u koudjil@live.fr -p "Darkle09&"'],shell=True)
-          login = subprocess.check_output([a],shell=True)
+          try:
+              login = subprocess.getoutput(a)
+          except subprocess.CalledProcessError as e:
+              raise RuntimeError(
+                  "command login '{}' return with error (code {}): {}".format(e.cmd, e.returncode, e.output))
           #os.system(a)
-          deploy= subprocess.check_output(['cf push0'],shell=True)
-          apps = subprocess.check_output(['cf apps'],shell=True)
+          try:
+              deploy = subprocess.getoutput("cf push " + nom_app)
+          except subprocess.CalledProcessError as e:
+              raise RuntimeError(
+                  "command deploy '{}' return with error (code {}): {}".format(e.cmd, e.returncode, e.output))
+          try:
+              apps = subprocess.getoutput("cf apps")
+          except subprocess.CalledProcessError as e:
+              raise RuntimeError(
+                  "command apps '{}' return with error (code {}): {}".format(e.cmd, e.returncode, e.output))
+          #apps = subprocess.check_output(['cf apps'],shell=True)
           #os.system('cf push asma12')
-          return login+deploy+apps
+          return login,deploy,apps
 
         ################################################################################################################
-    def config(self,dirctory):
+    def config(self,dirctory,nom_app):
         #os.chdir("/home/ghost/PycharmProjects/pfe/configuration")
         #os.chdir(dirctory)7
         print ("derictory ",dirctory)
@@ -52,19 +65,28 @@ class ibm:
         #subprocess.call(dirctory)
         os.chdir(dirctory)
         os.system("pwd")
-        """
+        fichiers = os.listdir(dirctory)
+        print (fichiers)
+        exist = "package.json" in fichiers
+        print("exist valeur ==", exist)
+
         Fichier = open('manifest.yml', 'w')
-        #Fichier.write("--- \n")
+        Fichier.write("--- \n")
         Fichier.write("applications: \n")
-        Fichier.write("- name : cours-vhdl \n")
-        Fichier.write("  host : koudjil19 \n")
+        Fichier.write("- name : " + nom_app + "\n")
         Fichier.write("  memory : 128M \n")
-        Fichier.write("  path : /home/ghost/Bureau/deploiment \n")
-        Fichier.write("  buildpack : https://github.com/cloudfoundry/staticfile-buildpack.git \n")
-        #Fichier.write("  instances : 2 \n")
+
+        if "package.json" in fichiers:
+            Fichier.write(
+                "  buildpack : https://github.com/cloudfoundry/nodejs-buildpack.git \n")  # donner le buildpack pour nodejs
+        elif "requirements.txt" in fichiers:
+            Fichier.write(
+                "  buildpack : https://github.com/cloudfoundry/python-buildpack.git \n")  # donner le buildpack pour python
+        elif "composer.json" in fichiers:
+            Fichier.write(
+                "  buildpack : https://github.com/cloudfoundry/php-buildpack.git \n")  # donner le buildpack pour php
+        # Fichier.write("  instances : 2 \n")
         Fichier.close()
-        os.system('cp /home/ghost/PycharmProjects/pfe/configuration/manifest.yml /home/ghost/Bureau/deploiment')
-        """
 #ibm_instance = ibm()
 #ibm_instance.build('verifier_la_instalation_des_logiciel.sh','cf-cli','darkle09')
 #ibm_instance.config()

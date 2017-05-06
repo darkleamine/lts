@@ -20,18 +20,20 @@ class gui:
               if(pack == pack_ibm and titre=='IBM'):
                    ibm_instance = ibm()
                     #ibm_instance.build(ver_package_install, pack, pwd_sys.get())
-                   ibm_instance.config(path_entry.get())
-                   output=ibm_instance.run(nom.get(),pwd.get())
-                   console.insert(END, output)
+                   ibm_instance.config(path_entry.get(),nom_app)
+                   login,deploy,apps=ibm_instance.run(nom.get(),pwd.get(),nom_app)
+                   console.insert(END, "***********************login********************************* *\n" + login + "\n")
+                   console.insert(END, "***********************deploy**********************************\n" + deploy + "\n")
+                   console.insert(END, "***********************apps************************************\n" + apps + "\n")
               elif(pack == pack_heroku):
                     heroku_instance = heroku()
                     #heroku_instance.build(ver_package_install,pack,pwd_sys.get())
                     heroku_instance.config(path_entry.get())
-                    output,output1,output2,output3=heroku_instance.run(nom.get(),pwd.get(),nom_app)
-                    console.insert(END,"*********login*********\n"+output+"\n")
-                    console.insert(END,"**********create********\n"+output1+"\n")
-                    console.insert(END,"*********deploy*********\n"+output2+"\n")
-                    console.insert(END,"*********apps************\n"+output3+"\n")
+                    login,create,deploy,apps=heroku_instance.run(nom.get(),pwd.get(),nom_app)
+                    console.insert(END,"***********************login********************************* *\n"+login+"\n")
+                    console.insert(END,"**********create***********************************************\n"+create+"\n")
+                    console.insert(END,"***********************deploy**********************************\n"+deploy+"\n")
+                    console.insert(END,"***********************apps************************************\n"+apps+"\n")
               elif(pack == pack_engine_yard):
                    engine_yard_instance = engine_yard()
                    engine_yard_instance.build(ver_package_install,pack,pwd_sys.get())
@@ -42,9 +44,9 @@ class gui:
                   #pivotel_instance.build(ver_package_install,pack,pwd_sys.get())
                   pivotel_instance.config(path_entry.get(),nom_app)
                   login,deploy,apps=pivotel_instance.run(nom.get(),pwd.get(),nom_app)
-                  console.insert(END, "*********login*********\n" + login+"\n")
-                  console.insert(END, "*********deploy*********\n" + deploy+"\n")
-                  console.insert(END,"***********apps**********\n"+apps+"\n")
+                  console.insert(END, "***********************login********************************* *\n" + login+"\n")
+                  console.insert(END, "***********************deploy**********************************\n" + deploy+"\n")
+                  console.insert(END,"***********************apps************************************\n"+apps+"\n")
 ########################################################################################################################
           def repertoire(self,path_entry):
                       path_entry.delete(0,END)
@@ -99,8 +101,8 @@ class gui:
 
           def __init__(self):
                  root=Tk()
-                 root.wm_minsize(800,350)
-                 root.wm_maxsize(800,350)
+                 root.wm_minsize(800,400)
+                 root.wm_maxsize(800,400)
                  root.title("pfe")
 #global pack
 
@@ -133,7 +135,7 @@ class gui:
                  engine_yard_button =Button(root,text="engine yard",image=pivotel_photo,width=100,height=50,command=lambda :self.fun(pack_engine_yard,'engine yard'))
                  engine_yard_button.place(x=10,y=70)
                  console = Text(root,bg="black",fg="white")
-                 console.place(x=10,y=150,height=150,width=780)
+                 console.place(x=10,y=150,height=200,width=780)
                  button_scrollbar = Scrollbar(console,bg="#696969",activebackground="#696969")
                  button_scrollbar.pack(side=RIGHT, fill=Y)
                  console.config(  yscrollcommand = button_scrollbar.set)
