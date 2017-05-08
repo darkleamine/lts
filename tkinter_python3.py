@@ -5,7 +5,7 @@ import tkinter.filedialog
 from ibm  import *
 from heroku import *
 from pivotel import *
-from engine_yard import *
+from openshift import *
 class gui:
 
 ########################################################################################################################
@@ -35,10 +35,10 @@ class gui:
                     console.insert(END,"***********************deploy**********************************\n"+deploy+"\n")
                     console.insert(END,"***********************apps************************************\n"+apps+"\n")
               elif(pack == pack_engine_yard):
-                   engine_yard_instance = engine_yard()
-                   engine_yard_instance.build(ver_package_install,pack,pwd_sys.get())
-                   engine_yard_instance.config(path_entry.get())
-                   engine_yard_instance.run(nom.get(),pwd.get())
+                  openshift_instance = openshift()
+                  #openshift_instance.build(ver_package_install,pack,pwd_sys.get())
+                  runtime=openshift_instance.config(path_entry.get())
+                  openshift_instance.run(nom_app,runtime)
               else:
                   pivotel_instance =pivotel()
                   #pivotel_instance.build(ver_package_install,pack,pwd_sys.get())
@@ -118,7 +118,7 @@ class gui:
                  pack_ibm='cf-cli'
                  pack_pivotel=pack_ibm
                  pack_heroku='heroku'
-                 pack_engine_yard='engineyard'
+                 pack_engine_yard='rhc'
                  #utilisation de function lambda a cause de fonction avec argement declanche click sourie
                  aws_button = Button ( root,text="aws",image=aws_photo,width=100,height=50,command=lambda :self.fun(pack_aws,'Amazon AWS'))
 
@@ -132,10 +132,16 @@ class gui:
                  heroku_button.place(x=210,y=10)
                  pivotel_button =Button(root,text="pivotel",image=pivotel_photo,width=100,height=50,command=lambda :self.fun(pack_pivotel,'Pivotel'))
                  pivotel_button.place(x=310,y=10)
-                 engine_yard_button =Button(root,text="engine yard",image=pivotel_photo,width=100,height=50,command=lambda :self.fun(pack_engine_yard,'engine yard'))
-                 engine_yard_button.place(x=10,y=70)
+                 openshift_button =Button(root,text="engine yard",image=pivotel_photo,width=100,height=50,command=lambda :self.fun(pack_engine_yard,'engine yard'))
+                 #openshift_button.place(x=10,y=70)
                  console = Text(root,bg="black",fg="white")
-                 console.place(x=10,y=150,height=200,width=780)
+                 console.place(x=10,y=170,height=200,width=780)
+                 application=Label(root,text='application',font="bold")
+                 application.place(x=10,y=60)
+                 terminal = Label(root, text='console', font="bold")
+                 terminal.place(x=10,y=145)
+                 console_app = Text(root, bg="black", fg="white")
+                 console_app.place(x=10,y=85,height=60,width=780)
                  button_scrollbar = Scrollbar(console,bg="#696969",activebackground="#696969")
                  button_scrollbar.pack(side=RIGHT, fill=Y)
                  console.config(  yscrollcommand = button_scrollbar.set)

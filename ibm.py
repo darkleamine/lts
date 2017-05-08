@@ -54,6 +54,7 @@ class ibm:
                   "command apps '{}' return with error (code {}): {}".format(e.cmd, e.returncode, e.output))
           #apps = subprocess.check_output(['cf apps'],shell=True)
           #os.system('cf push asma12')
+          os.system("xdg-open xdg-open https:"+nom_app+".mybluemix.net")
           return login,deploy,apps
 
         ################################################################################################################

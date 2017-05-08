@@ -6,3 +6,4 @@ echo "deb http://packages.cloudfoundry.org/debian stable main" | sudo tee /etc/a
 #sudo apt-get update
 
 sudo -S apt-get -y install cf-cli <<<$1
+cf install-plugin -f https://static-ice.ng.bluemix.net/ibm-containers-linux_x64

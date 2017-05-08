@@ -58,6 +58,7 @@ class pivotel:
         except subprocess.CalledProcessError as e:
             raise RuntimeError(
                 "command apps '{}' return with error (code {}): {}".format(e.cmd, e.returncode, e.output))
+        os.system("xdg-open https://"+nom_app+".cfapps.io")
 
         return login,deploy,apps
 
